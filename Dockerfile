@@ -18,6 +18,6 @@ RUN ln -s /usr/lib64/snort-2.9.11.1_dynamicengine \
        /usr/local/lib/snort_dynamicpreprocessor
 
 # Download the ruleset and copy the config
-RUN curl -LO https://jyotishp.ml/cdn/snort/snort.tar.xz
+RUN curl -LO https://researchweb.iiit.ac.in/~srisai.poonganam/config/snort.tar.xz
 RUN mkdir -p snort && /usr/local/lib/snort_dynamicrules && tar xvf snort.tar.xz -C snort
 RUN cp snort/etc/* /etc/snort/ && cp -r snort/preproc_rules/ /etc/snort/ && cp -r snort/rules /etc/snort/ && cp snort/so_rules/precompiled/Centos-7/x86-64/2.9.11.1/* /usr/local/lib/snort_dynamicrules/
